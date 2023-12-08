@@ -1,0 +1,55 @@
+
+<!-- <div>
+    <label for="title">Product Title: </label>
+    <input type="text">
+    <label for="quantity">Products image: </label>
+    <input type="file">
+    <label for="quantity">Actual Price: </label>
+    <input type="number">
+    <label for="quantity">Offers Price: </label>
+    <input type="number">
+    <button (click)="addToCart(product)"></button>
+</div> -->
+
+<form [formGroup]="productsFrom " (ngSubmit)="submitData()">
+    <br>
+    <br>
+  <label for="title">Product Title: </label>
+  <input formControlName="productTitle" type="text" placeholder="Product Title">
+  <br>
+  <br>
+  <label for="quantity">Actual Price: </label>
+  <input formControlName="productPrice" type="number" placeholder="price">
+  <br>
+  <br>
+  <label for="quantity">Offers Price: </label>
+  <input formControlName="offerPrice" type="number" placeholder="offerPrice">
+  <br>
+  <br>
+  <label for="quantity">Products image: </label>
+  <input formControlName="productImage" type="file" placeholder="Product image">
+  <br>
+  <br>
+  <br>
+  <button>Add Product</button>
+
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<h5 style="text-align: center; font-weight: 700; background-color: aqua;">Product Dashbord list</h5>
+<div *ngFor="let product of products">
+    <!-- <h5 style="text-align: center;">Product Dashbord list</h5> -->
+    <h2>{{product.title}}</h2>
+    <br>
+    <h1>{{product.price}}</h1>
+    <br>
+    <h1>{{product.offerPrice}}</h1>
+    <br>
+    <img [src]="product.image" alt="product image">
+</div>
+
+
